@@ -1,0 +1,29 @@
+version: 2
+
+builds:
+  - main: ./cmd/forage
+    binary: forage-{{ .Os }}-{{ .Arch }}
+    no_unique_dist_dir: true
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: windows
+        goarch: arm64
+
+archives:
+  - format: binary
+
+checksum:
+  name_template: "checksums.txt"
+
+release:
+  github:
+    owner: Laloww
+    name: Forage

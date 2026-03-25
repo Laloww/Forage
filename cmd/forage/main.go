@@ -10,6 +10,7 @@ import (
 	"github.com/Laloww/Forage/internal/chunk"
 	"github.com/Laloww/Forage/internal/embed"
 	"github.com/Laloww/Forage/internal/loader"
+	"github.com/Laloww/Forage/internal/mcp"
 	"github.com/Laloww/Forage/internal/server"
 	"github.com/Laloww/Forage/internal/store"
 )
@@ -37,6 +38,8 @@ func main() {
 		cmdStats()
 	case "clear":
 		cmdClear()
+	case "mcp":
+		cmdMCP()
 	case "version":
 		fmt.Printf("forage v%s\n", version)
 	case "help", "--help", "-h":
@@ -55,6 +58,7 @@ Usage:
   forage index <path>           Index files from directory
   forage search <query>         Semantic + keyword hybrid search
   forage serve [--port 8080]    Start HTTP API server
+  forage mcp                    Start MCP server (for Claude Code)
   forage stats                  Show index statistics
   forage clear                  Remove all indexed data
   forage version                Print version
@@ -207,6 +211,14 @@ func cmdServe() {
 
 	if err := srv.ListenAndServe(addr); err != nil {
 		fatal("server error: %v", err)
+	}
+}
+
+func cmdMCP() {
+	opts := parseFlags()
+	srv := mcp.New(storeDir, opts.ollamaURL, opts.model)
+	if err := srv.Run(); err != nil {
+		fatal("mcp server error: %v", err)
 	}
 }
 

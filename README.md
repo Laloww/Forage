@@ -74,6 +74,18 @@ curl -X POST localhost:8080/search \
   -d '{"query": "auth config", "top_k": 5}'
 ```
 
+### 6. Claude Code / MCP integration
+
+```bash
+# One command to add forage to Claude Code:
+claude mcp add forage -- npx @laloww/forage
+
+# Or if you have the binary:
+claude mcp add forage -- forage mcp
+```
+
+Now Claude can search your indexed docs directly during conversations.
+
 ## Supported File Types
 
 `.md` `.txt` `.go` `.py` `.js` `.ts` `.rs` `.yaml` `.yml` `.json` `.toml` `.html` `.css` `.xml` `.csv` `.sh` `.log`

@@ -1,0 +1,34 @@
+{
+  "name": "@laloww/forage",
+  "version": "0.1.0",
+  "description": "foRAGe — local-first RAG search. No Python, single binary.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Laloww/Forage.git"
+  },
+  "homepage": "https://github.com/Laloww/Forage",
+  "keywords": [
+    "rag",
+    "search",
+    "semantic-search",
+    "vector-search",
+    "ollama",
+    "mcp",
+    "claude",
+    "local-first",
+    "golang"
+  ],
+  "bin": {
+    "forage": "bin/forage.mjs"
+  },
+  "scripts": {
+    "postinstall": "node bin/install.mjs"
+  },
+  "files": [
+    "bin/"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
