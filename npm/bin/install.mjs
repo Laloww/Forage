@@ -7,7 +7,7 @@ import { get } from "https";
 import { execSync } from "child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const VERSION = "0.1.0";
+const VERSION = "0.2.0";
 const REPO = "Laloww/Forage";
 
 function getPlatform() {
