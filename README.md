@@ -78,7 +78,7 @@ curl -X POST localhost:8080/search \
 
 ```bash
 # One command to add forage to Claude Code:
-claude mcp add forage -- npx @laloww/forage
+claude mcp add forage -- npx @lalow123/forage
 
 # Or if you have the binary:
 claude mcp add forage -- forage mcp
