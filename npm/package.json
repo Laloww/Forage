@@ -26,7 +26,8 @@
     "postinstall": "node bin/install.mjs"
   },
   "files": [
-    "bin/"
+    "bin/",
+    "README.md"
   ],
   "engines": {
     "node": ">=18"
